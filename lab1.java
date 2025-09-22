@@ -1,47 +1,78 @@
 public class lab1 {
 
+    //1
     public double fraction (double x) {
         return x % 1;
     }
 
+    //2
     public int charToNum (char x) {
         return x - '0';
     }
 
-    public boolean is2Digits (int x) {
-        return 10 < x && x < 100;
+    //3
+    public boolean is2Digits(int x) {
+        int absX = Math.abs(x);
+        return absX >= 10 && absX <= 99;
     }
 
 
+    //4
     public boolean isInRange(int a, int b, int num) {
         return (a <= num & num <= b || a >= num & num >= b);
     }
 
-
+    //5
     public boolean isEqual(int a, int b, int c) {
-        return (a == b & a == c);
+        if (a == b && a == c) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
+    //6
     public int abs(int x) {
-        return x >= 0 ? (x) : (-x);
+        if (x >= 0) {
+            return x;
+        } else {
+            return -x;
+        }
     }
 
+    //7
     public boolean is35(int x) {
-        return (x % 3 == 0 ^ x % 5 == 0);
+        if (x % 3 == 0 || x % 5 == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
+
+    //8
     public int max3(int x, int y, int z) {
         int max = x;
-        if (y > max) max = y;
-        if (z > max) max = z;
+        if (y > max) {
+            max = y;
+        }
+        if (z > max) {
+            max = z;
+        }
         return max;
     }
 
+    //9
     public int sum2(int x, int y) {
         int sum = x + y;
-        return (sum >= 10 && sum <= 19) ? 20 : sum;
+        if (sum >= 10 && sum <= 19) {
+            return 20;
+        } else {
+            return sum;
+        }
     }
 
+    //10
     public String day(int x) {
         return switch (x) {
             case 1 -> "Понедельник";
@@ -55,6 +86,7 @@ public class lab1 {
         };
     }
 
+    // 11
     public String listNums(int x) {
         StringBuilder s = new StringBuilder();
         for (int i = 0; i <= x; i++) {
@@ -64,6 +96,7 @@ public class lab1 {
         return s.toString();
     }
 
+    // 12
     public String chet(int x) {
         StringBuilder s = new StringBuilder();
         for (int i = 0; i <= x; i += 2) {
@@ -73,10 +106,13 @@ public class lab1 {
         return s.toString();
     }
 
+    // 13
     public int numLen(long x) {
         x = Math.abs(x);
 
-        if (x == 0) return 1;
+        if (x == 0) {
+            return 1;
+        }
 
         int count = 0;
         while (x > 0) {
@@ -86,6 +122,7 @@ public class lab1 {
         return count;
     }
 
+    // 14
     public void square(int x) {
         for (int i = 0; i < x; i++) {
             for (int j = 0; j < x; j++) {
@@ -95,16 +132,21 @@ public class lab1 {
         }
     }
 
+    // 15
     public void rightTriangle(int x) {
         for (int i = 0; i < x; i++) {
             for (int j = 0; j < x; j++) {
-                if (x - i - 1 <= j) System.out.print("*");
-                else System.out.print(" ");
+                if (x - i - 1 <= j) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
             }
             System.out.println();
         }
     }
 
+    // 16
     public int findFirst(int[] arr, int x) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == x) {
@@ -114,6 +156,7 @@ public class lab1 {
         return -1;
     }
 
+    // 17
     public int maxAbs(int[] arr) {
         int max = arr[0];
         for (int i = 1; i < arr.length; i++) {
@@ -124,16 +167,23 @@ public class lab1 {
         return max;
     }
 
-
+    // 18
     public int[] add(int[] arr, int[] ins, int pos) {
         int[] result = new int[arr.length + ins.length];
         int i = 0;
-        for (; i < pos; i++) result[i] = arr[i];
-        for (int j = 0; j < ins.length; j++) result[i++] = ins[j];
-        for (int j = pos; j < arr.length; j++) result[i++] = arr[j];
+        for (; i < pos; i++) {
+            result[i] = arr[i];
+        }
+        for (int j = 0; j < ins.length; j++) {
+            result[i++] = ins[j];
+        }
+        for (int j = pos; j < arr.length; j++) {
+            result[i++] = arr[j];
+        }
         return result;
     }
 
+    // 19
     public int[] reverseBack(int[] arr) {
         int[] result = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
@@ -142,11 +192,15 @@ public class lab1 {
         return result;
     }
 
+    // 20
     public int[] findAll(int[] arr, int x) {
         int count = 0;
         for (int value : arr) {
-            if (value == x) count++;
+            if (value == x) {
+                count++;
+            }
         }
+
         int[] result = new int[count];
         int index = 0;
         for (int i = 0; i < arr.length; i++) {
@@ -156,6 +210,7 @@ public class lab1 {
         }
         return result;
     }
+
 
 }
 
